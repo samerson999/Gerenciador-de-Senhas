@@ -17,7 +17,7 @@ Sistema simples em Java para gerenciamento seguro de senhas e credenciais, com:
 - Armazenamento local dos dados em arquivos `.txt`.
 - Geração de senhas fortes e aleatórias.
 - Verificação contra senhas expostas.
-- Criptografia simétrica AES (chave fixa para fins educacionais).
+- Criptografia simétrica AES.
 
 ---
 
