@@ -24,7 +24,12 @@ public class Login {
                 }
             }
 
-            System.out.println("Credenciais inválidas. Tentar novamente?");
+            System.out.println("Credenciais inválidas. Deseja tentar novamente? (s/n)");
+            String resposta = scanner.nextLine().trim().toLowerCase();
+            if (!resposta.equals("s")) {
+                System.out.println("Encerrando o processo de login.");
+                return null;
+            }
         }
     }
 }
