@@ -42,15 +42,23 @@ public class Registro {
 
                 // Loop para garantir senha segura e não vazada
                 while (true) {
-                    System.out.print("Digite a senha: ");
-                    senha = scanner.nextLine();
+                System.out.print("Digite a senha: ");
+                senha = scanner.nextLine();
 
-                    if (VerificadorVazamento.senhaVazada(senha)) {
-                        System.out.println("Atenção: essa senha já foi exposta em vazamentos! Por favor, escolha outra.");
-                    } else {
-                        break; // senha válida, sai do loop
-                    }
+                System.out.print("Confirme a senha: ");
+                String confirmacao = scanner.nextLine();
+
+                if (!senha.equals(confirmacao)) {
+                    System.out.println("As senhas não coincidem. Tente novamente.");
+                    continue;
                 }
+
+                if (VerificadorVazamento.senhaVazada(senha)) {
+                    System.out.println("Atenção: essa senha já foi exposta em vazamentos! Por favor, escolha outra.");
+                } else {
+                    break; // senha válida, sai do loop
+                }
+            }
 
                 // Criptografa a senha antes de salvar
                 String senhaCriptografada = CriptografiaAES.criptografar(senha);
